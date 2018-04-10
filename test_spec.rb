@@ -21,3 +21,12 @@ class TestDescribe < Test::Unit::TestCase
   end
 end
 
+class TestAssertion < Test::Unit::TestCase
+  def test_that_it_can_pass
+    expect(2).to eq(2)
+  end
+
+  def test_that_it_can_fail
+    expect(2).to eq(3)
+  end
+end

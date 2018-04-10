@@ -2,6 +2,12 @@ def describe(description, &block)
   ExampleGroup.new(block).evaluate!
 end
 
+def expect(subject)
+end
+
+def eq(expectation)
+end
+
 class ExampleGroup
   def initialize(block)
     @block = block
