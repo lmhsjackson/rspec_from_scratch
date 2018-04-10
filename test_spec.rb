@@ -15,7 +15,6 @@ class TestDescribe < Test::Unit::TestCase
         it 'fails' do
           raise StandardError
         end
-
       end
     end
   end
@@ -27,6 +26,8 @@ class TestAssertion < Test::Unit::TestCase
   end
 
   def test_that_it_can_fail
-    expect(2).to eq(3)
+    assert_raise(AssertionError) do
+      expect(2).to eq(3)
+    end
   end
 end
