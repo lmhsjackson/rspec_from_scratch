@@ -3,11 +3,27 @@ def describe(description, &block)
 end
 
 def expect(subject)
+   @subject = Subject.new(subject)
+end
+
+class Subject
+  attr_reader :subject
+  def initialize(subject)
+    @subject = subject
+  end
+
+  def to(expectation)
+    expectation
+  end
 end
 
 def eq(expectation)
+  raise AssertionError unless @subject.subject == expectation
 end
 
+class AssertionError < Exception
+
+end
 class ExampleGroup
   def initialize(block)
     @block = block
